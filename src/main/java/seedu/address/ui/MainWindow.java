@@ -5,9 +5,13 @@ import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextInputControl;
+import javafx.scene.control.TitledPane;
 import javafx.scene.input.KeyCombination;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import seedu.address.commons.core.GuiSettings;
@@ -41,6 +45,7 @@ public class MainWindow extends UiPart<Stage> {
     private NoteListPanel noteListPanel;
     private MixedPanel mixedPanel;
     private CommandBox commandBox;
+    private ApplicationWithClosestInterviewDatePanel interviewReminderPane;
 
     @FXML
     private StackPane commandBoxPlaceholder;
@@ -56,6 +61,11 @@ public class MainWindow extends UiPart<Stage> {
 
     @FXML
     private StackPane statusbarPlaceholder;
+    @FXML
+    private TitledPane reminderTitlePane;
+    @FXML
+    private ScrollPane reminderContent;
+
 
     /**
      * Creates a {@code MainWindow} with the given {@code Stage} and {@code Logic}.
@@ -117,16 +127,19 @@ public class MainWindow extends UiPart<Stage> {
      * Fills up all the placeholders of this window.
      */
     void fillInnerParts() {
+        interviewReminderPane = new ApplicationWithClosestInterviewDatePanel(logic.getFilteredInternshipList());
         personListPanel = new PersonListPanel(logic.getFilteredInternshipList());
         todoListPanel = new TodoListPanel(logic.getFilteredTodoList());
         noteListPanel = new NoteListPanel(logic.getFilteredNoteList());
         mixedPanel = new MixedPanel(logic.getFilteredTodoList(), logic.getFilteredNoteList());
-
         personListPanelPlaceholder.getChildren().addAll(todoListPanel.getRoot(), noteListPanel.getRoot(),
                 mixedPanel.getRoot(), personListPanel.getRoot());
 
         resultDisplay = new ResultDisplay();
         resultDisplayPlaceholder.getChildren().add(resultDisplay.getRoot());
+        reminderTitlePane.setText("Earliest Upcoming Interview");
+        reminderContent.setContent(interviewReminderPane.getRoot());
+        reminderTitlePane.setContent(reminderContent);
 
         StatusBarFooter statusBarFooter = new StatusBarFooter(logic.getAddressBookFilePath());
         statusbarPlaceholder.getChildren().add(statusBarFooter.getRoot());

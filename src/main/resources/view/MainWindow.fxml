@@ -6,10 +6,14 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.control.TitledPane?>
 <fx:root type="javafx.stage.Stage" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
          title="Address App" minWidth="450" minHeight="600" onCloseRequest="#handleExit">
   <icons>
@@ -43,6 +47,16 @@
           <padding>
             <Insets top="5" right="10" bottom="5" left="10" />
           </padding>
+        </StackPane>
+
+        <StackPane VBox.vgrow="NEVER" styleClass="pane-with-border" minHeight="100" prefHeight="100" maxHeight="100">
+        <TitledPane VBox.vgrow="ALWAYS" fx:id="reminderTitlePane" styleClass="titled-pane"
+                    minHeight="100" prefHeight="100" maxHeight="100" >
+          <padding>
+            <Insets top="5" right="10" bottom="5" left="10" />
+          </padding>
+          <ScrollPane VBox.vgrow="ALWAYS" fx:id="reminderContent" fitToWidth="true" styleClass="scroll-pane"/>
+        </TitledPane>
         </StackPane>
 
         <VBox fx:id="personList" styleClass="pane-with-border" minWidth="340" prefWidth="340" VBox.vgrow="ALWAYS">

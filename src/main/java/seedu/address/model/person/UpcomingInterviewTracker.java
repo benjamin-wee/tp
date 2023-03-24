@@ -9,7 +9,7 @@ public class UpcomingInterviewTracker {
     public UpcomingInterviewTracker(List<InternshipApplication> applications) {
         this.applications = applications;
     }
-    private InternshipApplication getClosestUpcomingApplication() {
+    public InternshipApplication getClosestUpcomingApplication() {
         if (applications == null || applications.isEmpty()) {
             return null;
         }

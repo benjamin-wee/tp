@@ -136,6 +136,15 @@
      -fx-background-color: derive(#1d1d1d, 20%);
 }
 
+.titled-pane > .title {
+    -fx-background-color: #383838;
+}
+
+.titled-pane > .title > *.text {
+    -fx-family: "Segoe UI Light";
+    -fx-fill: white;
+}
+
 .pane-with-border {
      -fx-background-color: derive(#1d1d1d, 20%);
      -fx-border-color: derive(#1d1d1d, 10%);
@@ -145,6 +154,15 @@
 .status-bar {
     -fx-background-color: derive(#1d1d1d, 30%);
 }
+
+.scroll-pane > .viewport {
+    -fx-background-color: #515658;
+}
+
+.scroll-pane {
+    -fx-text-fill: white;
+}
+
 
 .result-display {
     -fx-background-color: transparent;
