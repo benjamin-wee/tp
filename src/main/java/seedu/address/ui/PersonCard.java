@@ -76,6 +76,9 @@ public class PersonCard extends UiPart<Region> {
         }
     }
 
+    /**
+     * Creates a {@code PersonCode} with the given {@code Person}
+     */
     public PersonCard(InternshipApplication application) {
         super(FXML);
         this.application = application;

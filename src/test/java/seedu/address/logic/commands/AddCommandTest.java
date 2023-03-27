@@ -183,6 +183,15 @@ public class AddCommandTest {
         }
 
         @Override
+        public InternshipApplication getReminder() {
+            throw new AssertionError("This method should not be called.");
+        }
+        @Override
+        public void updateReminder() {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
         public void deleteInternship(InternshipApplication target) {
             throw new AssertionError("This method should not be called.");
         }
