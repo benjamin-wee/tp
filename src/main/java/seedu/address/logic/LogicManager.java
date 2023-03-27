@@ -76,6 +76,12 @@ public class LogicManager implements Logic {
     }
 
     @Override
+    public InternshipApplication getReminderApplication() {
+        model.updateReminder();
+        return model.getReminder();
+    }
+
+    @Override
     public ObservableList<Person> getFilteredPersonList() {
         return model.getFilteredPersonList();
     }

@@ -15,7 +15,6 @@ import seedu.address.commons.core.GuiSettings;
 import seedu.address.commons.core.LogsCenter;
 import seedu.address.model.person.InternshipApplication;
 import seedu.address.model.person.Person;
-import seedu.address.model.person.UpcomingInterviewTracker;
 import seedu.address.model.task.InternshipTodo;
 import seedu.address.model.task.Note;
 
@@ -34,7 +33,8 @@ public class ModelManager implements Model {
     private final FilteredList<Note> filteredNote;
     private final FilteredList<Person> filteredPersons;
     private List<InternshipApplication> cachedInternshipList;
-    private UpcomingInterviewTracker upcomingInterviewTracker;
+    //private UpcomingInterviewTracker upcomingInterviewTracker;
+    private Reminder reminder;
 
     /**
      * Initializes a ModelManager with the given addressBook and userPrefs.
@@ -51,7 +51,7 @@ public class ModelManager implements Model {
         this.todoList = new TodoList(todoList);
         filteredPersons = new FilteredList<>(this.addressBook.getPersonList());
         filteredInternships = new FilteredList<>(this.addressBook.getInternshipList());
-        this.upcomingInterviewTracker = new UpcomingInterviewTracker(filteredInternships);
+        this.reminder = new Reminder(filteredInternships);
         filteredTodo = new FilteredList<>(this.todoList.getTodoList());
         filteredNote = new FilteredList<>(this.noteList.getNoteList());
         cachedInternshipList = new ArrayList<>();
@@ -226,6 +226,15 @@ public class ModelManager implements Model {
         requireAllNonNull(target, editedNote);
 
         noteList.setNote(target, editedNote);
+    }
+
+    @Override
+    public void updateReminder() {
+        reminder.setClosestUpcomingInterview();
+    }
+    @Override
+    public InternshipApplication getReminder() {
+        return reminder.getClosestUpcomingInterview();
     }
 
     //=========== Filtered Person List Accessors =============================================================

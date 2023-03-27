@@ -39,6 +39,8 @@ public interface Logic {
     /** Returns an unmodifiable view of the filtered list of persons */
     ObservableList<Person> getFilteredPersonList();
 
+    InternshipApplication getReminderApplication();
+
     /** Returns an unmodifiable view of the filtered list of todos */
     ObservableList<InternshipTodo> getFilteredTodoList();
 

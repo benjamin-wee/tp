@@ -10,8 +10,6 @@ import javafx.scene.control.TextInputControl;
 import javafx.scene.control.TitledPane;
 import javafx.scene.input.KeyCombination;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import seedu.address.commons.core.GuiSettings;
@@ -45,7 +43,7 @@ public class MainWindow extends UiPart<Stage> {
     private NoteListPanel noteListPanel;
     private MixedPanel mixedPanel;
     private CommandBox commandBox;
-    private ApplicationWithClosestInterviewDatePanel interviewReminderPane;
+    private ReminderPanel interviewReminderPane;
 
     @FXML
     private StackPane commandBoxPlaceholder;
@@ -127,7 +125,7 @@ public class MainWindow extends UiPart<Stage> {
      * Fills up all the placeholders of this window.
      */
     void fillInnerParts() {
-        interviewReminderPane = new ApplicationWithClosestInterviewDatePanel(logic.getFilteredInternshipList());
+        interviewReminderPane = new ReminderPanel(logic.getReminderApplication());
         personListPanel = new PersonListPanel(logic.getFilteredInternshipList());
         todoListPanel = new TodoListPanel(logic.getFilteredTodoList());
         noteListPanel = new NoteListPanel(logic.getFilteredNoteList());
@@ -137,6 +135,7 @@ public class MainWindow extends UiPart<Stage> {
 
         resultDisplay = new ResultDisplay();
         resultDisplayPlaceholder.getChildren().add(resultDisplay.getRoot());
+
         reminderTitlePane.setText("Earliest Upcoming Interview");
         reminderContent.setContent(interviewReminderPane.getRoot());
         reminderTitlePane.setContent(reminderContent);
@@ -223,6 +222,7 @@ public class MainWindow extends UiPart<Stage> {
             changePanelPlaceholder(this, commandResult.getType());
             resultDisplay.setFeedbackToUser(commandResult.getFeedbackToUser());
             commandBox.clearCommandTextField();
+            interviewReminderPane.updateReminderPanel(logic.getReminderApplication());
             ResultDialog.displayResultDialog(commandResult.getFeedbackToUser(), primaryStage);
 
             if (commandResult.isShowHelp()) {

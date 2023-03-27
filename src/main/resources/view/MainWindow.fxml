@@ -50,13 +50,13 @@
         </StackPane>
 
         <StackPane VBox.vgrow="NEVER" styleClass="pane-with-border" minHeight="100" prefHeight="100" maxHeight="100">
-        <TitledPane VBox.vgrow="ALWAYS" fx:id="reminderTitlePane" styleClass="titled-pane"
-                    minHeight="100" prefHeight="100" maxHeight="100" >
-          <padding>
-            <Insets top="5" right="10" bottom="5" left="10" />
-          </padding>
-          <ScrollPane VBox.vgrow="ALWAYS" fx:id="reminderContent" fitToWidth="true" styleClass="scroll-pane"/>
-        </TitledPane>
+          <TitledPane VBox.vgrow="ALWAYS" fx:id="reminderTitlePane" styleClass="titled-pane"
+                      minHeight="100" prefHeight="100" maxHeight="100" >
+            <padding>
+              <Insets top="5" right="10" bottom="5" left="10" />
+            </padding>
+              <ScrollPane VBox.vgrow="ALWAYS" fx:id="reminderContent" fitToWidth="true" styleClass="scroll-pane"/>
+          </TitledPane>
         </StackPane>
 
         <VBox fx:id="personList" styleClass="pane-with-border" minWidth="340" prefWidth="340" VBox.vgrow="ALWAYS">

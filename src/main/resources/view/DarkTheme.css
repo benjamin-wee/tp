@@ -155,14 +155,13 @@
     -fx-background-color: derive(#1d1d1d, 30%);
 }
 
+.scroll-pane *.text {
+    -fx-fill: white;
+}
+
 .scroll-pane > .viewport {
     -fx-background-color: #515658;
 }
-
-.scroll-pane {
-    -fx-text-fill: white;
-}
-
 
 .result-display {
     -fx-background-color: transparent;

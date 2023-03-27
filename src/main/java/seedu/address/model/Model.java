@@ -166,6 +166,9 @@ public interface Model {
      */
     void addPerson(Person person);
 
+    InternshipApplication getReminder();
+
+    void updateReminder();
     /**
      * Replaces the given internshipApplication {@code target} with {@code editedApplication}.
      * {@code target} must exist in the address book.
