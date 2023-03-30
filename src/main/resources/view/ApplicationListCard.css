@@ -1,0 +1,12 @@
+#cardPane {
+    -fx-background-color: #3b1263;
+    -fx-background-radius: 8;
+    -fx-effect: dropshadow(gaussian, rgba(24, 87, 87, 1.0), 0, 0, 5, 5);
+    -fx-text-fill: white;
+}
+
+#cardPane : hover {
+    -fx-background-color: #1884a8;
+    -fx-background-radius: 8;
+    -fx-text-fill: whitesmoke;
+}
