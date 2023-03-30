@@ -77,6 +77,10 @@ public class InterviewDate extends InternshipApplicationAttribute {
     public String toString() {
         return value.format(FORMATTER);
     }
+    
+    public LocalDateTime getDateTime() {
+        return value;
+    }
 
     @Override
     public boolean equals(Object other) {
