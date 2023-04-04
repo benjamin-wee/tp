@@ -1,4 +1,4 @@
-package seedu.address.storage;
+package storage;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -10,8 +10,8 @@ import seedu.address.model.ReadOnlyNote;
 import seedu.address.model.ReadOnlyTodoList;
 import seedu.address.model.ReadOnlyUserPrefs;
 import seedu.address.model.UserPrefs;
-import seedu.address.storage.task.note.NoteStorage;
-import seedu.address.storage.task.todo.TodoListStorage;
+import storage.task.note.NoteStorage;
+import storage.task.todo.TodoListStorage;
 
 /**
  * API of the Storage component

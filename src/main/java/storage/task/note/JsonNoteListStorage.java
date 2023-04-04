@@ -1,4 +1,4 @@
-package seedu.address.storage.task.note;
+package storage.task.note;
 
 import static java.util.Objects.requireNonNull;
 

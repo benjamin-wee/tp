@@ -1,4 +1,4 @@
-package seedu.address.storage.task.todo;
+package storage.task.todo;
 
 import static java.util.Objects.requireNonNull;
 

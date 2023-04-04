@@ -1,4 +1,4 @@
-package seedu.address.storage.task.note;
+package storage.task.note;
 
 import java.util.ArrayList;
 import java.util.List;

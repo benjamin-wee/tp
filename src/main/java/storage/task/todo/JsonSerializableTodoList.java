@@ -1,4 +1,4 @@
-package seedu.address.storage.task.todo;
+package storage.task.todo;
 
 import java.util.ArrayList;
 import java.util.List;
