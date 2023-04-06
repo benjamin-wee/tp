@@ -27,8 +27,8 @@ import static seedu.address.logic.commands.CommandTestUtil.assertCommandFailure;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
 import static seedu.address.logic.commands.CommandTestUtil.showInternshipAtIndex;
 import static seedu.address.testutil.TypicalInternships.getTypicalAddressBook;
-import static seedu.address.testutil.TypicalInternships.getTypicalNoteList;
-import static seedu.address.testutil.TypicalInternships.getTypicalTodoList;
+import static seedu.address.testutil.TypicalNotes.getTypicalNoteList;
+import static seedu.address.testutil.TypicalTodos.getTypicalTodoList;
 
 /**
  * Contains integration tests (interaction with the Model) and unit tests for
