@@ -8,6 +8,7 @@ public class CliSyntax {
     /* Prefix definitions */
     /* Prefix used in AddCommand */
     public static final Prefix PREFIX_COMPANY_NAME = new Prefix("n/");
+
     public static final Prefix PREFIX_JOB_TITLE = new Prefix("j/");
     public static final Prefix PREFIX_REVIEW = new Prefix("r/");
     public static final Prefix PREFIX_PROGRAMMING_LANGUAGE = new Prefix("p/");
